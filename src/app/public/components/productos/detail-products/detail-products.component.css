@@ -1,0 +1,23 @@
+.product-image {
+    object-fit: contain;
+    max-height: 450px; /* ajusta este valor según tus necesidades */
+    max-width: 100%;
+  }
+ 
+  
+  .quantity-button {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .quantity-text {
+    font-size: 1.2em;
+    margin: 0 10px;
+  }
+  .btn.active {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+  }
+
+  

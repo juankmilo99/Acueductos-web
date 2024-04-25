@@ -1,0 +1,28 @@
+<div class="container-fluid pt-4 px-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="text-dark" routerLink="/public/home"> <i class="fa fa-home me-2"></i>
+                    Inicio
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Blogs</li>
+        </ol>
+    </nav>
+
+    <!-- Tarjetas de blogs -->
+    <div class="row">
+        <div class="col-md-4" *ngFor="let blog of blogs">
+            <div class="card mb-4">
+                <img [src]="'data:image/jpeg;base64,' + blog.image" style="object-fit: contain; height: 200px;" alt="{{blog.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{blog.title}}</h5>
+                    <i (click)="abrirDetailBlog(blog.id)" style="font-size: 1.5em; cursor: pointer;"class="fa fa-eye"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+

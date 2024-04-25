@@ -1,0 +1,10 @@
+<div class="position-relative bg-white d-flex p-0">
+  <app-sidebar [showSidebar]="showSidebar"></app-sidebar>
+  <div class="content" [ngClass]="showSidebar? '' : 'open'">
+    <app-navbar  [showSidebar]="showSidebar" (clickHamburger)="toggleSidebar()"></app-navbar>
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>

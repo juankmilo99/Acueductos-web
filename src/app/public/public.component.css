@@ -1,0 +1,20 @@
+body, html {
+    height: 100%;
+  }
+  
+  .position-relative {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .content {
+    margin-bottom: 100px; 
+  }
+  
+  .content-wrapper {
+    margin: 20px; 
+  }
+  footer {
+    flex-shrink: 0;
+  }
+  

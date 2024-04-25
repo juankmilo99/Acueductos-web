@@ -1,0 +1,23 @@
+<div class="container-fluid pt-4 px-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/public/home"> <i class="fa fa-home me-2"></i>
+              Inicio
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a routerLink="/public/blogs">Blogs </a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Detalle</li>
+        </ol>
+      </nav>
+
+      <div class="mt-4" *ngFor="let blogItem of blog">
+        <h2>{{blogItem.title}}</h2> <!-- Título del blog -->
+        <div style="display: flex; justify-content: center; margin: 20px;">
+            <img [src]="'data:image/jpeg;base64,' + blogItem.image" style="width: 800px;" alt="{{blogItem.title}}"> <!-- Imagen del blog -->
+        </div>
+        <div [innerHTML]="blogItem.content"></div> <!-- Contenido del blog -->
+    </div>
+</div>

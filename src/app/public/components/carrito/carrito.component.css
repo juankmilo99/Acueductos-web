@@ -1,0 +1,19 @@
+/* carrito.component.css */
+.card-img-top {
+    width: 150px;  /* Ajusta el ancho como desees */
+    height: 150px; /* Ajusta la altura como desees */
+    object-fit: cover; /* Esto asegura que la imagen se redimensione correctamente */
+}
+.quantity-button {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .quantity-text {
+    font-size: 1.2em;
+    margin: 0 10px;
+  }
+
+  .total {
+    margin-left: 1000px;
+}

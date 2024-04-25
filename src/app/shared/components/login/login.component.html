@@ -1,0 +1,40 @@
+<section>
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+  
+                <a>
+                  <img class="logo-uni" src="../assets/img/auth.png" />
+                </a>
+                <form class="needs-validation" [class.was-validated]="submittedForm" novalidate >
+                  <h2 class="fw-bold mb-2 text-uppercase">Ingresar</h2>
+                  <p class="text-white-50 mb-5">Por favor ingresa tus credenciales!</p>
+  
+                  <div class="form-outline form-white mb-4">
+                    <input [(ngModel)]="auth.usuario" type="username" id="user" name="user"
+                      class="form-control form-control-lg" required />
+                      <div class="invalid-feedback">Por favor llena este campo.</div>
+                    <label class="form-label" for="user">Nombre de Usuario</label>
+                  </div>
+  
+                  <div class="form-outline form-white mb-4">
+                    <input [(ngModel)]="auth.contrasenia" type="password" id="typePasswordX" name="clave"
+                      class="form-control form-control-lg" required />
+                      <div class="invalid-feedback">Por favor llena este campo.</div>
+                    <label class="form-label" for="typePasswordX">Contraseña</label>
+                  </div>
+                  <button (click)="logIn()" class="btn btn-outline-light btn-lg px-5" type="submit">Ingresar</button>
+                </form>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
