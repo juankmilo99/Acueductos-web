@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.prod';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class TasksService {
   constructor(private http: HttpClient,private authService: AuthService) { }
 
 /////////////////////////////////////Productos///////////////////////////////////////////////////////////////////////////////////////////
-  
+
 obtenerProductosCategoria(category: any): any{
   return this.http.get(`${this.apiUrl}/productos/category/${category}`);
 }
@@ -92,7 +92,7 @@ crearQuote(quote: any): any {
     let Headers = new HttpHeaders({authorization : 'Bearer ' + this.authService.getToken()});
     return this.http.get<any>(this.apiUrl + '/providers', { headers: Headers });
   }
-  
+
   getCountries() {
     let Headers = new HttpHeaders({authorization : 'Bearer ' + this.authService.getToken()});
     return this.http.get<any>(this.apiUrl + '/countries', { headers: Headers });
@@ -102,5 +102,5 @@ crearQuote(quote: any): any {
     let Headers = new HttpHeaders({authorization : 'Bearer ' + this.authService.getToken()}).set('Content-Type', 'application/json');
     return this.http.post<any>(this.apiUrl + '/providers-country', json , { headers: Headers });
   }
-  
+
 }

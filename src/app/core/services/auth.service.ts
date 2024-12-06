@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.prod';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -10,14 +10,14 @@ export class AuthService {
   private apiUrl = environment.urlServer;
   onUserLoggedIn = new EventEmitter<void>();
 
-  constructor(private http: HttpClient,private router: Router) {    
+  constructor(private http: HttpClient,private router: Router) {
    }
 
    signUpUser(user: any): any {
     let json = JSON.stringify(user);
     let Headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post<any>(this.apiUrl + '/authenticate', json, { headers: Headers });
-    
+
   }
   registerUser(user: any): any {
     let json = JSON.stringify(user);
@@ -34,7 +34,7 @@ export class AuthService {
       return loggedIn;
     }
     return false;
-  
+
   }
 
   logOut() {
@@ -43,7 +43,7 @@ export class AuthService {
       this.router.navigate(['/public']);
     }
     return false;
-    
+
   }
 
   getToken() {
@@ -51,6 +51,6 @@ export class AuthService {
       return localStorage.getItem('token');
     }
     return false;
-    
+
   }
 }
